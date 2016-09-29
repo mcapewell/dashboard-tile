@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dashboard Tile Playground</title>
+        <link rel="stylesheet" href="./externals/bootstrap.min.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="dashboard-tile">
+            <header data-bind="visible: showHeader">
+                <div class="dashboard-tile-title" data-bind="text: title"></div>
+                <div class="dashboard-tile-subtitle" data-bind="text: subtitle"></div>
+            </header>
+            <section>
+                15
+            </section>
+        </div>
+
+        <div class="sidebar">
+            <input type="checkbox" data-bind="checked: showHeader" />
+            <input type="text" data-bind="textInput: title" />
+            <input type="text" data-bind="textInput: subtitle" />
+        </div>
+
+        <script data-main="./app" src="./externals/require.js"></script>
+    </body>
+</html>
