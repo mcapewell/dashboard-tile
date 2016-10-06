@@ -43,20 +43,20 @@ body {
     display: flex;
 }
 
-.dashboard-tile nav ul.dashboard-tile-actions li {
+.dashboard-tile nav ul.dashboard-tile-actions > li {
     margin: 0 0 0 10px;
     padding: 0;
     list-style: none;
 }
 
-.dashboard-tile nav ul.dashboard-tile-actions li a.dashboard-tile-action {
+.dashboard-tile nav ul.dashboard-tile-actions > li a.dashboard-tile-action {
     text-decoration: none;
     color: inherit;
     opacity: 0.4;
     transition: opacity 0.5s ease-in;
 }
 
-.dashboard-tile nav ul.dashboard-tile-actions li a.dashboard-tile-action:hover {
+.dashboard-tile nav ul.dashboard-tile-actions > li a.dashboard-tile-action:hover {
     opacity: 1;
     transition: opacity 0.5s ease-out;
 }
@@ -94,6 +94,7 @@ body {
 .glyphicon-fw {
     width: 1.28571429em;
     text-align: center;
+    margin-right: 5px;
 }
 
 .sidebar {
