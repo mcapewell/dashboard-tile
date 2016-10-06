@@ -53,6 +53,13 @@
                     </div>
                 </div>-->
                 <div class="form-group">
+                    <p class="form-group-label">Dashboard editing</p>
+                    <button type="button" data-toggle="button" class="btn btn-toggle-switch active" data-bind="click: setEditing" autocomplete="off" aria-pressed="false">
+                        <span class="stateLabel stateLabel-on">On</span>
+                        <span class="stateLabel stateLabel-off">Off</span>
+                    </button>
+                </div>
+                <div class="form-group">
                     <label>Title</label>
                     <input class="form-control" data-bind="textInput: title">
                 </div>
@@ -61,7 +68,7 @@
                     <input class="form-control" data-bind="textInput: subtitle">
                 </div>
                 <!--<div class="btn-group">
-                    <a class="btn btn-primary" data-bind="click: reflow">Reflow</a>
+                    <a class="btn btn-primary">Save</a>
                 </div>-->
             </form>
         </div>
@@ -121,6 +128,24 @@
                     //this.showHeader = ko.observable(true);
                     this.title = ko.observable("Example Chart");
                     this.subtitle = ko.observable("Last refreshed: a few seconds ago");
+                    this.isEditing = ko.observable(true);
+
+                    this.setEditing = function() {
+                        //this.isEditing(!this.isEditing());
+                        
+                        var gridster = $(".gridster > ul").gridster().data("gridster");
+
+                        if (this.isEditing()) {
+                            gridster.disable();
+                            gridster.disable_resize();
+                            this.isEditing(false);
+                        }
+                        else {
+                            gridster.enable();
+                            gridster.enable_resize();
+                            this.isEditing(true);
+                        }
+                    };
                 }
 
                 var viewModel = new AppViewModel();
